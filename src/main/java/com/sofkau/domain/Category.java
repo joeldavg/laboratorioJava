@@ -1,7 +1,6 @@
 package com.sofkau.domain;
 
 public class Category {
-
     private Long id;
     private Level nivel;
     private Long scoreId;
