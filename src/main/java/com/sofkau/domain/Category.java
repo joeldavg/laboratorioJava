@@ -7,6 +7,7 @@ public class Category {
         System.out.println(test);
 =======
 
+
     private Long id;
     private Level nivel;
     private Long scoreId;
