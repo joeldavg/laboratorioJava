@@ -2,7 +2,6 @@ package com.sofkau.domain;
 
 public class Category {
 
-
     private Long id;
     private Level nivel;
     private Long scoreId;
@@ -35,5 +34,14 @@ public class Category {
 
     public void setScoreId(Long scoreId) {
         this.scoreId = scoreId;
+    }
+
+    @Override
+    public String toString() {
+        return "Category{" +
+                "id=" + id +
+                ", nivel=" + nivel +
+                ", scoreId=" + scoreId +
+                '}';
     }
 }
