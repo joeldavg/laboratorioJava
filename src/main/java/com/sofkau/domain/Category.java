@@ -1,13 +1,6 @@
 package com.sofkau.domain;
 
 public class Category {
-<<<<<<< HEAD
-    public static void main(String[] args) {
-        String test="OKA LOKA";
-        System.out.println(test);
-=======
-
-
     private Long id;
     private Level nivel;
     private Long scoreId;
