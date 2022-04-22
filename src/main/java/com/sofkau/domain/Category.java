@@ -33,6 +33,14 @@ public class Category {
 
     public void setScoreId(Long scoreId) {
         this.scoreId = scoreId;
->>>>>>> be40f6bd4b706bebe091953abd828e600efb15f2
+    }
+
+    @Override
+    public String toString() {
+        return "Category{" +
+                "id=" + id +
+                ", nivel=" + nivel +
+                ", scoreId=" + scoreId +
+                '}';
     }
 }

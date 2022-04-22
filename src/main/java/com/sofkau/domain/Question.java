@@ -1,14 +1,15 @@
 package com.sofkau.domain;
 
-public class Question {
-    private Long id;
-    private String question;
-    private Long categoryId;
+public class Category {
 
-    public Question(Long id, String question, Long categoryId) {
+    private Long id;
+    private Level nivel;
+    private Long scoreId;
+
+    public Category(Long id, Level nivel, Long scoreId) {
         this.id = id;
-        this.question = question;
-        this.categoryId = categoryId;
+        this.nivel = nivel;
+        this.scoreId = scoreId;
     }
 
     public Long getId() {
@@ -19,24 +20,28 @@ public class Question {
         this.id = id;
     }
 
-    public String getQuestion() {
-        return question;
+    public Level getNivel() {
+        return nivel;
     }
 
-    public void setPregunta(String question) {
-        this.question = question;
+    public void setNivel(Level nivel) {
+        this.nivel = nivel;
     }
 
-    public Long getCategoryId() {
-        return categoryId;
+    public Long getScoreId() {
+        return scoreId;
     }
 
-    public void setCategoryId(Long categoryId) {
-        this.categoryId = categoryId;
+    public void setScoreId(Long scoreId) {
+        this.scoreId = scoreId;
     }
 
     @Override
     public String toString() {
-        return "question [id=" + id + ", question=" + question + ", categoryId=" + categoryId + "]";
+        return "Category{" +
+                "id=" + id +
+                ", nivel=" + nivel +
+                ", scoreId=" + scoreId +
+                '}';
     }
 }
