@@ -2,14 +2,17 @@ package com.sofkau.domain;
 
 public class Answer {
     private Long id;
-    private String question;
-    private Long categoryId;
+    private String answer;
+    private Boolean correct;
+    private Long questionId;
 
-    public Answer(Long id, String question, Long categoryId) {
+    public Answer(Long id, String answer, Boolean correct, Long questionId) {
         this.id = id;
-        this.question = question;
-        this.categoryId = categoryId;
+        this.answer = answer;
+        this.correct = correct;
+        this.questionId = questionId;
     }
+
     public Long getId() {
         return id;
     }
@@ -18,23 +21,33 @@ public class Answer {
         this.id = id;
     }
 
-    public String getQuestion() {
-        return question;
+    public String getAnswer() {
+        return answer;
     }
 
-    public void setQuestion(String question) {
-        this.question = question;
+    public void setAnswer(String answer) {
+        this.answer = answer;
     }
 
-    public Long getCategoryId() {
-        return categoryId;
+    public Boolean getCorrect() {
+        return correct;
     }
 
-    public void setCategoriaId(Long categoriaId) {
-        this.categoryId = categoriaId;
+    public void setCorrect(Boolean correct) {
+        this.correct = correct;
     }
+
+    public Long getQuestionId() {
+        return questionId;
+    }
+
+    public void setQuestionId(Long questionId) {
+        this.questionId = questionId;
+    }
+
     @Override
     public String toString() {
-        return "Question [id=" + id + ", question=" + question + ", categoryId=" + categoryId + "]";
+        return "Answer [id=" + id + ", answer=" + answer + ", correct=" + correct + ", questionId="
+                + questionId + "]";
     }
 }
