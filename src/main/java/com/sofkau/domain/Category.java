@@ -1,6 +1,11 @@
 package com.sofkau.domain;
 
 public class Category {
+<<<<<<< HEAD
+    public static void main(String[] args) {
+        String test="OKA LOKA";
+        System.out.println(test);
+=======
 
     private Long id;
     private Level nivel;
@@ -34,6 +39,7 @@ public class Category {
 
     public void setScoreId(Long scoreId) {
         this.scoreId = scoreId;
+>>>>>>> be40f6bd4b706bebe091953abd828e600efb15f2
     }
 
     @Override
