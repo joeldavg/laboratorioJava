@@ -27,8 +27,8 @@ public class PlayerDaoImpl implements PlayerDao {
                     while (rs.next()) {
                         Long id = rs.getLong(1);
                         String name = rs.getString(2);
-                        String surname = rs.getString(3);
-                        player = new Player(id, name, surname, email);
+                        String lastname = rs.getString(3);
+                        player = new Player(id, name, lastname, email);
                     }
                 }
             }
