@@ -1,23 +1,22 @@
 package com.sofkau.dao.impl;
 
-import com.sofkau.dao.AnswerDao;
+import com.sofkau.dao.CategoryDao;
 import com.sofkau.dao.jdbc.ConnectionDB;
-import com.sofkau.domain.Answer;
+import com.sofkau.domain.Category;
+import com.sofkau.domain.Level;
 import com.sofkau.exception.GenericException;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
-import java.util.ArrayList;
-import java.util.List;
 
-public class AnswerDaoImpl implements AnswerDao {
+public class CategoryDaoImpl  implements CategoryDao {
+
     @Override
-    public List<Answer> getByQuestionId(Long preguntaId) throws GenericException {
+    public Category getByLevel(Level level) throws GenericException {
+        Category category = null;
 
-        List<Answer> respuestas = new ArrayList<>();
-
-        String sql = "SELECT * FROM respuestas WHERE preguntas_id = " + preguntaId;
+        String sql = "SELECT * FROM categorias WHERE nivel = '" + level.toString() + "'";
 
         try (Connection connection = ConnectionDB.getConnection()) {
 
@@ -27,9 +26,8 @@ public class AnswerDaoImpl implements AnswerDao {
 
                     while (rs.next()) {
                         Long id = rs.getLong(1);
-                        String answer = rs.getString(2);
-                        Boolean correct = rs.getBoolean(3);
-                        respuestas.add(new Answer(id, answer, correct, preguntaId));
+                        Long puntosId = rs.getLong(3);
+                        category = new Category(id, level, puntosId);
                     }
                 }
             }
@@ -38,6 +36,6 @@ public class AnswerDaoImpl implements AnswerDao {
             throw new GenericException("No se pudo consultar: " + sql, e);
         }
 
-        return respuestas;
+        return category;
     }
 }

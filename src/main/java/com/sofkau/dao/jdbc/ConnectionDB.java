@@ -6,9 +6,9 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-public class ConectionDB {
+public class ConnectionDB {
 
-    public static Connection obtenerConexion() throws GenericException {
+    public static Connection getConnection() throws GenericException {
 
         String host = "ec2-54-83-21-198.compute-1.amazonaws.com";
         String database = "ddb1f37ahbs315";
@@ -21,8 +21,7 @@ public class ConectionDB {
 
         try {
             Class.forName(driverName);
-            Connection connection = DriverManager.getConnection(url, user, password);
-            return connection;
+            return DriverManager.getConnection(url, user, password);
         } catch (SQLException | ClassNotFoundException e) {
             throw new GenericException("Error obtaining connection: " + e.getMessage(), e);
         }
@@ -30,7 +29,7 @@ public class ConectionDB {
     }
 
     public static void main(String[] args) {
-        try (Connection connection = ConectionDB.obtenerConexion()) {
+        try (Connection connection = ConnectionDB.getConnection()) {
             System.out.println("Connection obtained");
 
         } catch (Exception e) {

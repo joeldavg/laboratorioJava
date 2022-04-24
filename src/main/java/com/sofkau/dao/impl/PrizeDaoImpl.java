@@ -1,7 +1,7 @@
 package com.sofkau.dao.impl;
 
 import com.sofkau.dao.PrizeDao;
-import com.sofkau.dao.jdbc.ConectionDB;
+import com.sofkau.dao.jdbc.ConnectionDB;
 import com.sofkau.domain.Prize;
 import com.sofkau.exception.GenericException;
 
@@ -17,7 +17,7 @@ public class PrizeDaoImpl implements PrizeDao {
 
         String sql = "SELECT * FROM premios WHERE id = " + id;
 
-        try (Connection connection = ConectionDB.obtenerConexion()) {
+        try (Connection connection = ConnectionDB.getConnection()) {
 
             try (Statement st = connection.createStatement()) {
 

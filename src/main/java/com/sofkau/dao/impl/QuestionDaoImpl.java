@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.sofkau.dao.QuestionDao;
-import com.sofkau.dao.jdbc.ConectionDB;
+import com.sofkau.dao.jdbc.ConnectionDB;
 import com.sofkau.domain.Question;
 import com.sofkau.exception.GenericException;
 
@@ -20,7 +20,7 @@ public class QuestionDaoImpl implements QuestionDao {
 
         String sql = "SELECT * FROM preguntas WHERE categorias_id = " + categoryId;
 
-        try (Connection connection = ConectionDB.obtenerConexion()) {
+        try (Connection connection = ConnectionDB.getConnection()) {
 
             try (Statement st = connection.createStatement()) {
 
