@@ -35,7 +35,7 @@ public class QuestionDaoImpl implements QuestionDao {
             }
 
         } catch (Exception e) {
-            throw new GenericException("No consultation was possible: " + sql, e);
+            throw new GenericException("Couldn't query: " + sql, e);
         }
 
         return questions;

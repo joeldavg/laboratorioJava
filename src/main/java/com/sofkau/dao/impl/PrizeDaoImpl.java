@@ -31,7 +31,7 @@ public class PrizeDaoImpl implements PrizeDao {
             }
 
         } catch (Exception e) {
-            throw new GenericException("No se pudo consultar: " + sql, e);
+            throw new GenericException("Couldn't query: " + sql, e);
         }
 
         return prize;

@@ -21,12 +21,12 @@ public class Prize {
         return points;
     }
 
-    public void setPoints(Integer puntos) {
-        this.points = puntos;
+    public void setPoints(Integer points) {
+        this.points = points;
     }
 
     @Override
     public String toString() {
-        return "Premio [id=" + id + ", pointss=" + points + "]";
+        return "Prize [id=" + id + ", points=" + points + "]";
     }
 }
