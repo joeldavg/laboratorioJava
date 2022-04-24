@@ -20,7 +20,7 @@ public class GameMenu {
         firstRound(totalPoints, player);
     }
 
-    public static void verHistorialPartidas(Player player) throws GenericException {
+    public static void showGameHistory(Player player) throws GenericException {
         System.out.println("\n:: HISTORIAL DE PARTIDAS: " + player.getName().toUpperCase()+"\n");
         List<Game> games = gameDao.getByPlayerId(player.getId());
         if (games.isEmpty()) {
@@ -67,7 +67,7 @@ public class GameMenu {
             int response = wishToContinue(totalPoints);
             switch (response) {
                 case 1:
-                    terceraRonda(totalPoints, player);
+                    thirdRound(totalPoints, player);
                     break;
                 case 2:
                     saveGame(totalPoints, false, player, categoryId);
@@ -76,7 +76,7 @@ public class GameMenu {
         }
     }
 
-    private static void terceraRonda(int totalPoints, Player player) throws GenericException {
+    private static void thirdRound(int totalPoints, Player player) throws GenericException {
         int points = RoundMenu.newRound(Level.THREE);
         long categoryId = 3l;
         if (points == 0) {
