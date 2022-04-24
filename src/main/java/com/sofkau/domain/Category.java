@@ -1,20 +1,13 @@
 package com.sofkau.domain;
 
 public class Category {
-<<<<<<< HEAD
-    public static void main(String[] args) {
-        String test="OKA LOKA";
-        System.out.println(test);
-=======
-
-
     private Long id;
-    private Level nivel;
+    private Level level;
     private Long scoreId;
 
-    public Category(Long id, Level nivel, Long scoreId) {
+    public Category(Long id, Level level, Long scoreId) {
         this.id = id;
-        this.nivel = nivel;
+        this.level = level;
         this.scoreId = scoreId;
     }
 
@@ -26,12 +19,12 @@ public class Category {
         this.id = id;
     }
 
-    public Level getNivel() {
-        return nivel;
+    public Level getLevel() {
+        return level;
     }
 
-    public void setNivel(Level nivel) {
-        this.nivel = nivel;
+    public void setLevel(Level level) {
+        this.level = level;
     }
 
     public Long getScoreId() {
@@ -40,6 +33,14 @@ public class Category {
 
     public void setScoreId(Long scoreId) {
         this.scoreId = scoreId;
->>>>>>> be40f6bd4b706bebe091953abd828e600efb15f2
+    }
+
+    @Override
+    public String toString() {
+        return "Category{" +
+                "id=" + id +
+                ", level=" + level +
+                ", scoreId=" + scoreId +
+                '}';
     }
 }
