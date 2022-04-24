@@ -13,11 +13,11 @@ import java.util.List;
 
 public class AnswerDaoImpl implements AnswerDao {
     @Override
-    public List<Answer> getByQuestionId(Long preguntaId) throws GenericException {
+    public List<Answer> getByQuestionId(Long questionId) throws GenericException {
 
-        List<Answer> respuestas = new ArrayList<>();
+        List<Answer> answers = new ArrayList<>();
 
-        String sql = "SELECT * FROM respuestas WHERE preguntas_id = " + preguntaId;
+        String sql = "SELECT * FROM respuestas WHERE preguntas_id = " + questionId;
 
         try (Connection connection = ConnectionDB.getConnection()) {
 
@@ -29,7 +29,7 @@ public class AnswerDaoImpl implements AnswerDao {
                         Long id = rs.getLong(1);
                         String answer = rs.getString(2);
                         Boolean correct = rs.getBoolean(3);
-                        respuestas.add(new Answer(id, answer, correct, preguntaId));
+                        answers.add(new Answer(id, answer, correct, questionId));
                     }
                 }
             }
@@ -38,6 +38,6 @@ public class AnswerDaoImpl implements AnswerDao {
             throw new GenericException("Couldn't query: " + sql, e);
         }
 
-        return respuestas;
+        return answers;
     }
 }
